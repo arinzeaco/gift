@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.splash.SplashViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/splash_background">
+
+        <TextView
+            style="@style/poppins_semibold_36"
+            android:fontFamily="@font/heebo_medium"
+            android:text="@string/application_name"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/text2"
+            app:layout_constraintStart_toStartOf="@+id/text2" />
+
+        <TextView
+            android:id="@+id/text2"
+            style="@style/heebo_regular_18"
+            android:fontFamily="@font/heebo"
+            android:text="@string/gift_cards_for_everyone"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:srcCompat="@drawable/payment_background" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

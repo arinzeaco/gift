@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/form_background_color"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/_24sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_21sdp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="60dp"
+                android:text="@string/application_name"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_your_account"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="200dp"
+                android:text="@string/create_your_account"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/please_select_an_account"
+                style="@style/heebo_regular_18"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/creating_an_account_is_easy"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_your_account" />
+
+            <EditText
+                android:id="@+id/firstNameEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:hint="@string/firstname"
+                android:inputType="textPersonName|textCapSentences"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/please_select_an_account"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/lastNameEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/lastname"
+                android:inputType="textPersonName|textCapSentences"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstNameEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/businessNameEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/business_name"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/emailEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/businessNameEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/countryEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/country"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/active_button_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_expand_more_24"
+                app:layout_constraintBottom_toBottomOf="@+id/countryEdt"
+                app:layout_constraintEnd_toEndOf="@+id/countryEdt"
+                app:layout_constraintTop_toTopOf="@+id/countryEdt"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/mobileEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/stateEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:hint="@string/state"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/active_button_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mobileEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_expand_more_24"
+                app:layout_constraintBottom_toBottomOf="@+id/stateEdt"
+                app:layout_constraintEnd_toEndOf="@+id/stateEdt"
+                app:layout_constraintTop_toTopOf="@+id/stateEdt"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/cityEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/city"
+                android:inputType="text"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stateEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/addressEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/address"
+                android:inputType="text"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <com.globasure.giftoga.ui.custom.xtrength.XtrengthInputView
+                android:id="@+id/passwordEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:padding="0dp"
+                android:textColorHint="@color/grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressEdt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/tv_password_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/failed_color"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEdt"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/passwordToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_visibility_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/passwordEdt"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEdt"
+                app:layout_constraintTop_toTopOf="@+id/passwordEdt"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createAccountBtn"
+                style="@style/button_round"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:background="@drawable/button_round_light_blue"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/create_account"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password_info" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/_25ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createAccountBtn">
+
+                <it.emperor.animatedcheckbox.AnimatedCheckBox
+                    android:id="@+id/termCheckBox"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:padding="@dimen/_1sdp"
+                    android:visibility="visible"
+                    app:acb_animation_duration="500"
+                    app:acb_border_checked_color="@color/colorAccent"
+                    app:acb_border_checked_stroke_width="2dp"
+                    app:acb_border_not_checked_color="@color/inactive_button"
+                    app:acb_checked="false"
+                    app:acb_circle_color="@color/inactive_button"
+                    app:acb_hook_color="@color/colorAccent"
+                    app:acb_hook_stroke_width="3dp"
+                    app:acb_padding="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/i_have_read_and_agree"
+                    android:textColor="#7D90AA"
+                    app:layout_constraintBottom_toBottomOf="@+id/termCheckBox"
+                    app:layout_constraintStart_toEndOf="@+id/termCheckBox"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:text="@string/the_terms_of_use"
+                    android:textColor="#344C9D"
+                    app:layout_constraintStart_toEndOf="@id/textView10"
+                    app:layout_constraintTop_toTopOf="@id/textView10" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/of_giftoga"
+                    android:textColor="#7D90AA"
+                    app:layout_constraintStart_toEndOf="@+id/termCheckBox"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.authentication.login.LoginFragViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/_24sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:background="@color/form_background_color"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_21sdp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="60dp"
+                android:text="@string/application_name"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_your_account"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="200dp"
+                android:text="@string/login_title"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/please_select_an_account"
+                style="@style/heebo_regular_18"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/login_subtitle"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_your_account" />
+
+            <EditText
+                android:id="@+id/emailEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:hint="@string/email_address"
+                android:textColorHint="@color/hint_text_color_light"
+                app:layout_constraintTop_toBottomOf="@+id/please_select_an_account"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/passwordEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:hint="@string/password"
+                android:textColorHint="@color/hint_text_color_light"
+                app:layout_constraintTop_toBottomOf="@+id/emailEdt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="Autofill,LabelFor" />
+
+            <ImageView
+                android:id="@+id/passwordToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_visibility_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/passwordEdt"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEdt"
+                app:layout_constraintTop_toTopOf="@+id/passwordEdt"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginBtn"
+                style="@style/button_round"
+                android:background="@drawable/button_round_light_blue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/log_in"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEdt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

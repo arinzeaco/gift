@@ -1,0 +1,22 @@
+package com.globasure.giftoga.domain.usecase
+
+import com.globasure.giftoga.domain.repository.PaymentTokenRepository
+import com.globasure.giftoga.network.response.ChargePayPalResponse
+import javax.inject.Inject
+
+class ConfirmPayPalUseCase @Inject constructor(private val paymentTokenRepository: PaymentTokenRepository) {
+
+    sealed class Result {
+        object Loading : Result()
+        data class Success(val response: ChargePayPalResponse) : Result()
+        data class Failure(val throwable: Throwable) : Result()
+    }
+
+    suspend fun execute(reference: String, order_id: String): Result {
+        return try {
+            Result.Success(paymentTokenRepository.confirmPayPal(reference, order_id))
+        } catch (exception: Exception) {
+            Result.Failure(exception)
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp">
+
+    <ImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:padding="6dp"
+        android:src="@drawable/ic_cancel_icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/arrow_image"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@color/background_history_icon_green"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeBtn"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/type_background"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/arrow_image"
+        app:layout_constraintEnd_toEndOf="@+id/arrow_image"
+        app:layout_constraintStart_toStartOf="@+id/arrow_image"
+        app:layout_constraintTop_toTopOf="@+id/arrow_image"
+        app:srcCompat="@drawable/ic_arrow_up"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/please_note_Tv"
+        style="@style/poppins_medium_15"
+        android:textColor="@color/history_large_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        tools:text="N5000 Gift Card Purchase"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrow_image" />
+
+    <TextView
+        android:id="@+id/date_Tv"
+        style="@style/poppins_medium_15"
+        android:textColor="@color/history_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/date"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/please_note_Tv" />
+
+    <TextView
+        android:id="@+id/transaction_id"
+        style="@style/poppins_medium_15"
+        android:textColor="@color/history_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/date"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_Tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

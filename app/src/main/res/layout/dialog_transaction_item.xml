@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:background="@drawable/rounded_white_background_5dp">
+
+    <ImageView
+        android:id="@+id/transaction_close_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:padding="6dp"
+        android:src="@drawable/ic_cancel_icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/type_background"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_transaction_success"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/transaction_title"
+        style="@style/heebo_medium_13"
+        android:textColor="@color/active_button_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:text="@string/transaction_successful"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_background" />
+
+    <TextView
+        android:id="@+id/transaction_sub_title"
+        style="@style/heebo_regular_12"
+        android:textColor="@color/very_light_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="@string/example_purchase_success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_title" />
+
+    <ImageView
+        android:id="@+id/qr_code"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_transaction_success"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_sub_title"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/cost_title"
+        style="@style/heebo_regular_12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="end|center_vertical"
+        android:text="@string/cost_of_gift_card"
+        android:textColor="@color/very_light_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/type_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qr_code" />
+
+    <TextView
+        android:id="@+id/transaction_cost"
+        style="@style/heebo_regular_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/hintTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cost_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cost_title" />
+
+    <TextView
+        android:id="@+id/quantity_title"
+        style="@style/heebo_regular_12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="end|center_vertical"
+        android:text="@string/gift_card_quantity"
+        android:textColor="@color/very_light_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/cost_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cost_title" />
+
+    <TextView
+        android:id="@+id/card_quantity"
+        style="@style/heebo_regular_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/hintTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quantity_title" />
+
+    <TextView
+        android:id="@+id/transaction_id_title"
+        style="@style/heebo_regular_12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="end|center_vertical"
+        android:text="@string/transaction_id"
+        android:textColor="@color/very_light_blue"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/quantity_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantity_title" />
+
+    <TextView
+        android:id="@+id/transaction_id"
+        style="@style/heebo_regular_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/hintTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/transaction_id_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/transaction_id_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

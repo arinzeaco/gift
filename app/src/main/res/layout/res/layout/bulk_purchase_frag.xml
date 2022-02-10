@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.bulk_purchase.BulkPurchaseViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/app_back_ground_color"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/topbar_item"
+            android:id="@+id/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="50dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/upload_bulk_TV"
+                style="@style/poppins_semibold_36"
+                android:textColor="@color/top_bar_title_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upload_bulk_contact"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_TV"
+                style="@style/rubik_normal_18"
+                android:textColor="@color/grey_87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_can_upload"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_bulk_TV" />
+
+            <ImageView
+                android:id="@+id/image_icon"
+                style="@style/heebo_regular_12"
+                android:textColor="@color/grey"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_upload_file"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_TV"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/messageTv"
+                style="@style/rubik_medium_20"
+                android:textColor="@color/grey"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heebo"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:text="@string/tap_to_upload_underline"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="40dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/top_layout"
+            app:layout_constraintStart_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/send_btn_to_single"
+                android:layout_width="240dp"
+                android:layout_height="50dp"
+                android:text="@string/send_to_single_user"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@color/send_to_single_user"
+                android:textSize="14sp"
+                android:background="@drawable/grey_unfilled_round_coner"
+                android:fontFamily="@font/heebo_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

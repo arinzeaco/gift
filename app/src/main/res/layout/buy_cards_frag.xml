@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.main_fragment.buy_cards.BuyCardsFragViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/form_background_color">
+
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/buy_card_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <EditText
+                android:id="@+id/giftSearchEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_light_grey"
+                android:elevation="3dp"
+                android:hint="@string/search_for_gift_cards"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/grey_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".48"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/giftCountrySearch"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/edittext_light_grey"
+                android:elevation="3dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/select_country"
+                android:textColor="@color/grey_50"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".48" />
+
+            <ImageView
+                android:id="@+id/arrowDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:elevation="3dp"
+                android:src="@drawable/ic_expand_more_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/giftCountrySearch"
+                app:layout_constraintEnd_toEndOf="@+id/giftCountrySearch"
+                app:layout_constraintTop_toTopOf="@+id/giftCountrySearch"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="50dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_search">
+
+            <ImageView
+                android:id="@+id/card_empty_image"
+                android:layout_width="67dp"
+                android:layout_height="46dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                app:srcCompat="@drawable/ic_card_empty_icon" />
+
+            <TextView
+                android:id="@+id/empty_text"
+                style="@style/heebo_regular_12"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:text="@string/looks_like_you_havent_bought_any_gift_cards_yet"
+                android:textColor="@color/history_large_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_empty_image" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="157dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_blue_filled"
+                android:fontFamily="@font/heebo_medium"
+                android:text="@string/buy_gift_cards"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empty_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_search">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/buy_gift_cardRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="50dp"
+                android:visibility="visible"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_buy_gift_card" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

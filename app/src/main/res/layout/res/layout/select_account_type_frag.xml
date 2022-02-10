@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/_24sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_21sdp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="60dp"
+                android:text="@string/application_name"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_your_account"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="@dimen/_120sdp"
+                android:text="@string/create_your_account"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/please_select_an_account"
+                style="@style/heebo_regular_18"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/please_select_an_account_type_to_sign_up_as"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_your_account" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/personal_account_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/grey_unfilled_round_coner"
+                android:elevation="5dp"
+                android:paddingStart="@dimen/_21sdp"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingEnd="@dimen/_21sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@+id/please_select_an_account">
+
+                <TextView
+                    android:id="@+id/personal1"
+                    style="@style/poppins_semibold_36"
+                    android:text="@string/personal_account"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/personal2"
+                    style="@style/heebo_regular_18"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/buy_gift_cards_from"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/corporate_account_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/grey_unfilled_round_coner"
+                android:elevation="5dp"
+                android:paddingStart="@dimen/_21sdp"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingEnd="@dimen/_21sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@+id/personal_account_layout">
+
+                <TextView
+                    android:id="@+id/corporate1"
+                    style="@style/poppins_semibold_36"
+                    android:text="@string/corporate_account"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/corporate2"
+                    style="@style/heebo_regular_18"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/buy_gift_cards_from_any_brand_and_send_to_multiple"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/corporate1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/merchant_account_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/grey_unfilled_round_coner"
+                android:elevation="5dp"
+                android:paddingStart="@dimen/_21sdp"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingEnd="@dimen/_21sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@+id/corporate_account_layout">
+
+                <TextView
+                    android:id="@+id/merchant1"
+                    style="@style/poppins_semibold_36"
+                    android:text="@string/merchant_account"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/merchant2"
+                    style="@style/heebo_regular_18"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/sell_your_own_gift_cards_directly_on_the_platform"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/merchant1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/agent_account_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/grey_unfilled_round_coner"
+                android:elevation="5dp"
+                android:paddingStart="@dimen/_21sdp"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingEnd="@dimen/_21sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@+id/merchant_account_layout">
+
+                <TextView
+                    android:id="@+id/agent1"
+                    style="@style/poppins_semibold_36"
+                    android:text="@string/agent_account"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/agent2"
+                    style="@style/heebo_regular_18"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/sell_any_company_gift"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/agent1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/continue_Btn"
+                style="@style/button_round"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/continue_btn"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agent_account_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:padding="20dp"
+    android:background="@drawable/rounded_white_background_5dp">
+
+    <ImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:padding="6dp"
+        android:src="@drawable/ic_cancel_icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/title_TV"
+        style="@style/poppins_semibold_36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/giftcard_code"
+        android:textAllCaps="true"
+        android:textColor="@color/history_large_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeBtn" />
+
+    <TextView
+        android:id="@+id/please_note_Tv"
+        style="@style/heebo_regular_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/heebo"
+        android:gravity="center_horizontal"
+        android:text="@string/please_note_that_immediately_this"
+        android:textColor="@color/grey_94"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_TV" />
+
+    <TextView
+        android:id="@+id/code_Edt"
+        style="@style/standard_text_field"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@color/form_background_color"
+        android:gravity="center"
+        android:hint="@string/code_hidden"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColorHint="@color/grey_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/please_note_Tv"
+        tools:ignore="Autofill,LabelFor" />
+
+    <ImageView
+        android:id="@+id/codeToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/ic_visibility_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/code_Edt"
+        app:layout_constraintEnd_toEndOf="@+id/code_Edt"
+        app:layout_constraintTop_toTopOf="@+id/code_Edt"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/copy_gift_code_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_blue_filled"
+        android:fontFamily="@font/heebo_medium"
+        android:text="@string/copy_gift_card_code"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_Edt" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show_qr_code"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/blue_unfilled_round_corner"
+        android:fontFamily="@font/heebo_medium"
+        android:text="@string/show_qr_code"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/copy_gift_code_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

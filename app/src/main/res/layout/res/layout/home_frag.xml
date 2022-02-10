@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.main_fragment.home.HomeFragViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_back_ground_color">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/poppins_semibold_36"
+            android:text="@string/application_name"
+            android:textSize="16sp"
+            android:layout_marginStart="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/oval_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="@string/todo"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/oval_white"
+            app:layout_constraintEnd_toEndOf="@+id/oval_white"
+            app:layout_constraintStart_toStartOf="@id/oval_white"
+            app:layout_constraintTop_toTopOf="@+id/oval_white"
+            app:srcCompat="@drawable/ic_bell" />
+
+        <ImageView
+            android:id="@+id/oval_white"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_oval_white" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            style="@style/rubik_normal_18"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="96dp"
+            android:contentDescription="@string/todo"
+            android:text="@{name}"
+            android:textColor="@color/title_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/good_morning_obi" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameTv">
+
+            <LinearLayout
+                android:id="@+id/card_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameTv">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/depositCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_purple"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/depositTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/deposit_balance"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/depositAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/depositTitle"
+                            app:layout_constraintTop_toBottomOf="@id/depositTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/depositType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:text="@string/fund_wallet"
+                            android:background="@drawable/white_unfilled_round_coner"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/depositType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/commissionCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_orange"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/commissionTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/commission_balance"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/commissionAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/commissionTitle"
+                            app:layout_constraintTop_toBottomOf="@id/commissionTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/commissionType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:text="@string/fund"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/commissionType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/salesCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_red"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/salesTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/gift_card_sales"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/salesAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/salesTitle"
+                            app:layout_constraintTop_toBottomOf="@id/salesTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/salesType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:background="@drawable/white_unfilled_round_coner"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="invisible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/salesType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/redeemCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_blue"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/redeemTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/giftoga_card"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/redeemAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/redeemTitle"
+                            app:layout_constraintTop_toBottomOf="@id/redeemTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/redeemType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/redeemType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/salesAmountCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_blue"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/salesAmountTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/giftoga_card"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/salesMoneyAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/salesAmountTitle"
+                            app:layout_constraintTop_toBottomOf="@id/salesAmountTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/salesAmountType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/salesAmountType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/giftOgaCard"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp"
+                        android:background="@color/card_background_purple"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/giftOgaTitle"
+                            style="@style/rubik_light_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/giftoga_card"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/giftOgaAmount"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@id/giftOgaTitle"
+                            app:layout_constraintTop_toBottomOf="@id/giftOgaTitle"
+                            tools:text="@string/money_example" />
+
+                        <TextView
+                            android:id="@+id/giftOgaType"
+                            style="@style/rubik_medium_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="34dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/rubik_medium"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            app:layout_constraintBottom_toBottomOf="@id/giftOgaType"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/ic_card_design" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/transaction_historyTv"
+            style="@style/heebo_regular_14_grey"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_150sdp"
+            android:letterSpacing="0.1"
+            android:text="@string/transaction_history"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="90dp"
+            android:background="#FFFFFF"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transaction_historyTv">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_haven_t_made_any_transactions_yet"
+                android:textColor="#6D6B6B"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transaction_historyTv">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/transactionRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="@dimen/_25ssp"
+                android:visibility="visible"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_history_transaction" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

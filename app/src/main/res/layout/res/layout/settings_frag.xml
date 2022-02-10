@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.main_fragment.settings.SettingsFragViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/topbar_item" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="80dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="80dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/profile_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/personal1"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/profile_settings"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/personal2"
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/manage_details_of_your_giftOga_account"
+                        android:textColor="@color/grey_87"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/personal1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_layout"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/corporate1"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/address"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/corporate2"
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/manage_details_of_your_personal_address"
+                        android:textColor="@color/grey_87"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/corporate1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/verification_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/address_layout"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/verification"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/verify_your_banking_information_on_gift_oga"
+                        android:textColor="@color/grey"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/debit_card_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/verification_layout"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/debit_card"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/manage_debit_cards_connected_to_your_account"
+                        android:textColor="@color/grey"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/security_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/debit_card_layout"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/security"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/manage_your_account_security_seamlessly"
+                        android:textColor="@color/grey_87"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/support_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/white_unfilled_round_corner"
+                    android:elevation="5dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/security_layout"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/poppins_medium_15"
+                        android:text="@string/help_support"
+                        android:textColor="@color/history_large_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/heebo_regular_18"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/support_subtitle"
+                        android:textColor="@color/grey_87"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/logoutBtn"
+                    style="@style/button_round"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:text="@string/log_out"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/support_layout"
+                    tools:ignore="Autofill,LabelFor" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

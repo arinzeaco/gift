@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.single_giftcard_item.SingleGiftItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_back_ground_color">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/topbar_item" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include">
+
+            <ImageView
+                android:id="@+id/gift_cardImv"
+                android:layout_width="200dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="20dp"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_search"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gift_cardImv">
+
+                <TextView
+                    android:id="@+id/item_type_tv"
+                    style="@style/poppins_semibold_36"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/top_bar_title_color"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/select_amount_label"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.01"
+                    android:text="@string/select_an_amount"
+                    android:textAllCaps="true"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_type_tv" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_amount_rv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/select_amount_label"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_select_amount" />
+
+                <TextView
+                    android:id="@+id/amount_label"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.1"
+                    android:text="@string/enter_custom_amount"
+                    android:textAllCaps="true"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/select_amount_rv" />
+
+                <EditText
+                    android:id="@+id/amount_Edt"
+                    style="@style/standard_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/rounded_background_blue_selector"
+                    android:hint="@string/enter_amount"
+                    android:inputType="number"
+                    android:textColorHint="@color/hint_text_color_light"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_label"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <TextView
+                    android:id="@+id/amount_warning"
+                    style="@style/heebo_medium_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:letterSpacing="0.1"
+                    android:text="@string/enter_maximum_amount"
+                    android:textAllCaps="false"
+                    android:textColor="@color/card_background_red"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_Edt" />
+
+                <TextView
+                    android:id="@+id/enter_quality_label"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="22dp"
+                    android:letterSpacing="0.1"
+                    android:text="@string/enter_quality"
+                    android:textAllCaps="true"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_warning" />
+
+                <EditText
+                    android:id="@+id/quality_Edt"
+                    style="@style/standard_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/rounded_background_blue_selector"
+                    android:hint="@string/quantity"
+                    android:inputType="number"
+                    android:textColorHint="@color/hint_text_color_light"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enter_quality_label"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <LinearLayout
+                    android:id="@+id/liner_layout_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingBottom="50dp"
+                    android:weightSum="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quality_Edt">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buy_gift_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_blue_filled"
+                        android:fontFamily="@font/heebo_medium"
+                        android:text="@string/buy_gift_cards"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/empty_text" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/send_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/blue_unfilled_round_corner"
+                        android:fontFamily="@font/heebo_medium"
+                        android:text="@string/send_to_friend"
+                        android:textAllCaps="false"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/empty_text" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

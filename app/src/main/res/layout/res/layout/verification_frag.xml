@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_back_ground_color">
+
+        <include layout="@layout/topbar_item" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_back_ground_color"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+                <TextView
+                    android:id="@+id/verified_txt"
+                    style="@style/heebo_medium_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:background="@drawable/button_round_green"
+                    android:gravity="center"
+                    android:letterSpacing="0.01"
+                    android:padding="10dp"
+                    android:text="@string/validate_already"
+                    android:textColor="@color/verified_color"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/country_label"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="81dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.1"
+                    android:text="@string/bank_capital"
+                    android:textAllCaps="true"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/select_bank_Tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:background="@drawable/rounded_background_light_blue_selector"
+                    android:fontFamily="@font/heebo"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_bank"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:textColor="@color/profile_edit_text_color_bold"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/country_label"
+                    app:layout_constraintWidth_percent=".5" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_expand_more_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/select_bank_Tv"
+                    app:layout_constraintEnd_toEndOf="@+id/select_bank_Tv"
+                    app:layout_constraintTop_toTopOf="@+id/select_bank_Tv"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/bvn_title"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.1"
+                    android:text="@string/bvn_capital"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/select_bank_Tv" />
+
+                <EditText
+                    android:id="@+id/bvn_Ed"
+                    style="@style/standard_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:background="@drawable/rounded_background_light_blue_selector"
+                    android:hint="@string/password_hint"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:textColor="@color/profile_edit_text_color_bold"
+                    android:textColorHint="@color/grey_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bvn_title"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <TextView
+                    android:id="@+id/upload_title"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.1"
+                    android:text="@string/upload_document_capital"
+                    android:textAllCaps="true"
+                    android:textColor="@color/profile_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bvn_Ed" />
+
+                <TextView
+                    android:id="@+id/upload_file_name"
+                    style="@style/heebo_medium_13"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/upload_document_capital"
+                    android:textColor="@color/profile_edit_text_color_bold"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_title" />
+
+                <TextView
+                    android:id="@+id/tap_to_upload_tv"
+                    style="@style/heebo_regular_14_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:background="@drawable/edittext_light_blue"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:hint="@string/bvn"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:text="@string/tap_to_upload"
+                    android:textColor="@color/profile_edit_text_color_bold"
+                    android:textColorHint="@color/grey_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_file_name"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/send_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="26dp"
+                    android:background="@drawable/button_blue_filled"
+                    android:fontFamily="@font/heebo_medium"
+                    android:text="@string/save_information"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tap_to_upload_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

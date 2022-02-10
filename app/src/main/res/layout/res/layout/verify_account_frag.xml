@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.authentication.verify.VerifyAccountFragViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/form_background_color"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/_24sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_21sdp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="60dp"
+                android:text="@string/application_name"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_your_account"
+                style="@style/poppins_semibold_36"
+                android:layout_marginTop="200dp"
+                android:text="@string/verify_account"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/please_select_an_account"
+                style="@style/heebo_regular_12"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/enter_the_code"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_your_account" />
+
+            <TextView
+                android:id="@+id/emailTxt"
+                style="@style/heebo_regular_12"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/please_select_an_account"
+                tools:text="@string/unknown_email" />
+
+            <EditText
+                android:id="@+id/codeEdt"
+                style="@style/standard_text_field"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:hint="@string/code"
+                android:inputType="number"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:textColorHint="@color/hint_text_color_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailTxt"
+                tools:ignore="Autofill,LabelFor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/verifyEmailBtn"
+                style="@style/button_round"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/verify_email"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeEdt"
+                tools:ignore="Autofill,LabelFor" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

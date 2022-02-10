@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.main_fragment.my_cards.MyCardsFragViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/form_background_color">
+
+        <include layout="@layout/topbar_item" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="50dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <ImageView
+                android:id="@+id/card_empty_image"
+                android:layout_width="67dp"
+                android:layout_height="46dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_card_empty_icon" />
+
+            <TextView
+                android:id="@+id/empty_text"
+                style="@style/heebo_regular_12"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/looks_like_you_havent_bought_any_gift_cards_yet"
+                android:textColor="@color/history_large_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_empty_image" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buy_card_button"
+                android:layout_width="157dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_blue_filled"
+                android:fontFamily="@font/heebo_medium"
+                android:text="@string/buy_gift_cards"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empty_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_cardRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_gift_card" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/scanButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/_60sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:src="@drawable/ic_qr_code_24"
+            android:scaleType="centerInside"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:backgroundTint="#080d72"
+            app:elevation="2dp"
+            app:borderWidth="0dp"
+            app:fabCustomSize="60dp"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

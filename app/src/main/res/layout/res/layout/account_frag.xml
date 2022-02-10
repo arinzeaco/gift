@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.main_fragment.account.AccountFragViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_back_ground_color">
+
+        <include layout="@layout/topbar_item" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_details"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/rounded_white_background_10dp"
+                android:paddingBottom="@dimen/_4sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userAvatar"
+                    android:layout_width="@dimen/_64sdp"
+                    android:layout_height="@dimen/_64sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/default_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/fullName"
+                    style="@style/text_account"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userAvatar"
+                    tools:text="@string/test_name" />
+
+                <ImageView
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fullName"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/emailTv"
+                    style="@style/text_account"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/email_address"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <TextView
+                    android:id="@+id/emailEd"
+                    style="@style/text_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="20dp"
+                    android:ellipsize="marquee"
+                    android:gravity="end"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textColor="#FE685A"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/emailTv"
+                    app:layout_constraintTop_toBottomOf="@id/divider1"
+                    tools:text="@string/test_email" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/text_account"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/date_joined"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/dateJoinedTv" />
+
+                <TextView
+                    android:id="@+id/dateJoinedTv"
+                    style="@style/text_account"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="20dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@id/emailEd"
+                    tools:text="@string/test_date" />
+
+                <ImageView
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dateJoinedTv"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/text_account"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/wallet_balance"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/wallet_balanceTv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/wallet_balanceTv" />
+
+                <TextView
+                    android:id="@+id/wallet_balanceTv"
+                    style="@style/text_account"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/heebo_medium"
+                    android:textAlignment="textEnd"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@id/divider2"
+                    tools:text="@string/test_amount" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/transaction_historyTv"
+                style="@style/heebo_regular_14_grey"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/transaction_history"
+                android:textColor="@color/black_grey"
+                android:textSize="14sp"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_layout" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/view_all_btn"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/blue_unfilled_round_corner"
+                android:fontFamily="@font/heebo_medium"
+                android:text="@string/see_all"
+                android:textColor="@color/dark_blue"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="@+id/transaction_historyTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/transaction_historyTv" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pullToRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/transaction_historyTv">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/transactionRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="@dimen/_25ssp"
+                    android:visibility="visible"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_history_transaction" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/empty"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="90dp"
+                android:background="@color/app_back_ground_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/transaction_historyTv">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/you_haven_t_made_any_transactions_yet"
+                    android:textColor="#6D6B6B"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.globasure.giftoga.ui.screen.complete_order.CompleteOrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey">
+
+        <include layout="@layout/topbar_item" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/light_grey"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/summary_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_white_background_10dp"
+                        android:paddingBottom="20dp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/summary_order"
+                            style="@style/poppins_semibold_36"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="30dp"
+                            android:text="@string/order_summary"
+                            android:textColor="@color/top_bar_title_color"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/name_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="21dp"
+                            android:text="@string/name_capital"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/summary_order" />
+
+                        <TextView
+                            android:id="@+id/price_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_marginTop="21dp"
+                            android:text="@string/price_capital"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@id/guideline2"
+                            app:layout_constraintTop_toBottomOf="@+id/summary_order" />
+
+                        <TextView
+                            android:id="@+id/quantity_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_marginTop="21dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/quantity_capital"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/summary_order" />
+
+                        <TextView
+                            android:id="@+id/gift_cardTv"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="0dp"
+                            android:layout_marginTop="13dp"
+                            android:layout_marginEnd="10dp"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/price_Tv"
+                            app:layout_constraintStart_toStartOf="@id/name_label"
+                            app:layout_constraintTop_toBottomOf="@+id/name_label"
+                            tools:text="Amazon US Gift Card" />
+
+                        <TextView
+                            android:id="@+id/price_Tv"
+                            style="@style/heebo_medium_13"
+                            android:layout_marginStart="1dp"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/gift_cardTv"
+                            app:layout_constraintStart_toEndOf="@id/guideline2"
+                            app:layout_constraintTop_toTopOf="@+id/gift_cardTv"
+                            tools:text="$50.0" />
+
+                        <TextView
+                            android:id="@+id/quantity_Tv"
+                            style="@style/heebo_medium_13"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/price_Tv"
+                            app:layout_constraintEnd_toEndOf="@+id/quantity_label"
+                            app:layout_constraintStart_toStartOf="@id/quantity_label"
+                            app:layout_constraintTop_toTopOf="@+id/price_Tv"
+                            tools:text="1" />
+
+                        <ImageView
+                            android:id="@+id/divider_exchange"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/divider_color"
+                            android:visibility="visible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/gift_cardTv"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/transaction_exchange_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:maxLines="2"
+                            android:text="@string/transaction_exchange"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toStartOf="@+id/transaction_fee_Tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider_exchange" />
+
+                        <TextView
+                            android:id="@+id/transaction_exchange_Tv"
+                            style="@style/heebo_medium_13"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/transaction_exchange_label"
+                            app:layout_constraintStart_toEndOf="@id/guideline2"
+                            app:layout_constraintTop_toTopOf="@+id/transaction_exchange_label"
+                            tools:text="@string/ten_dollar" />
+
+                        <ImageView
+                            android:id="@+id/divider_sms"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/divider_color"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/transaction_exchange_label"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/transaction_sms_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:maxLines="2"
+                            android:text="@string/transaction_sms_fee"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/transaction_fee_Tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider_sms" />
+
+                        <TextView
+                            android:id="@+id/transaction_sms_Tv"
+                            style="@style/heebo_medium_13"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/transaction_sms_label"
+                            app:layout_constraintStart_toEndOf="@id/guideline2"
+                            app:layout_constraintTop_toTopOf="@+id/transaction_sms_label"
+                            tools:text="@string/ten_dollar" />
+
+                        <ImageView
+                            android:id="@+id/divider_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/divider_color"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/transaction_sms_label"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/transaction_fee_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:maxLines="2"
+                            android:text="@string/transaction_fee"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/transaction_fee_Tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider_fee" />
+
+                        <TextView
+                            android:id="@+id/transaction_fee_Tv"
+                            style="@style/heebo_medium_13"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/transaction_fee_label"
+                            app:layout_constraintStart_toEndOf="@id/guideline2"
+                            app:layout_constraintTop_toTopOf="@+id/transaction_fee_label"
+                            tools:text="@string/ten_dollar" />
+
+                        <ImageView
+                            android:id="@+id/divider_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/divider_color"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/transaction_fee_Tv"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/total_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:maxLines="2"
+                            android:text="@string/total"
+                            android:textAllCaps="true"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/total_Tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider_total" />
+
+                        <TextView
+                            android:id="@+id/total_Tv"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="13dp"
+                            android:maxLines="2"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/total_label"
+                            app:layout_constraintStart_toEndOf="@id/guideline2"
+                            app:layout_constraintTop_toTopOf="@+id/total_label"
+                            tools:text="@string/sixty_dollar" />
+
+                        <it.emperor.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/deliver_sms"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:padding="@dimen/_1sdp"
+                            android:visibility="visible"
+                            app:acb_animation_duration="500"
+                            app:acb_border_checked_color="@color/colorAccent"
+                            app:acb_border_checked_stroke_width="2dp"
+                            app:acb_border_not_checked_color="@color/inactive_button"
+                            app:acb_checked="false"
+                            app:acb_circle_color="@color/inactive_button"
+                            app:acb_hook_color="@color/colorAccent"
+                            app:acb_hook_stroke_width="3dp"
+                            app:acb_padding="2dp"
+                            app:layout_constraintStart_toStartOf="@id/total_label"
+                            app:layout_constraintTop_toBottomOf="@id/total_label" />
+
+                        <TextView
+                            android:id="@+id/delivery_label"
+                            style="@style/heebo_medium_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:maxLines="2"
+                            android:text="@string/transaction_sms_deliver"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/deliver_sms"
+                            app:layout_constraintStart_toEndOf="@id/deliver_sms"
+                            app:layout_constraintTop_toTopOf="@+id/deliver_sms" />
+
+                        <TextView
+                            android:id="@+id/delivery_note"
+                            style="@style/heebo_regular_14_blue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:maxLines="2"
+                            android:text="@string/transaction_sms_note"
+                            android:textColor="@color/profile_text_color"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/deliver_sms"
+                            app:layout_constraintTop_toBottomOf="@+id/deliver_sms"
+                            tools:ignore="SmallSp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.50" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/payment_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_white_background_10dp"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="27dp"
+                        app:layout_constraintTop_toBottomOf="@+id/summary_layout">
+
+                        <TextView
+                            android:id="@+id/payment_information_Tv"
+                            style="@style/poppins_semibold_36"
+                            android:layout_marginTop="41dp"
+                            android:text="@string/payment_information"
+                            android:textColor="@color/top_bar_title_color"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/payment_method_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center_vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/payment_information_Tv">
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_wallet_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="visible"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/wallet"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                tools:ignore="SmallSp" />
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_giftogacard_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="16dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="visible"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/giftoga_card"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                tools:ignore="SmallSp" />
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_card_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="16dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="visible"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/pay_with_card"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                tools:ignore="SmallSp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/payment_method_layout_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/payment_method_layout">
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_paypal_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="visible"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/method_paypal"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                tools:ignore="SmallSp" />
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_banktransfer_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="16dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="visible"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/method_bank_transfer"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                tools:ignore="SmallSp" />
+
+                            <it.emperor.animatedcheckbox.AnimatedCheckBox
+                                android:id="@+id/pay_with_paystack_iv"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="16dp"
+                                android:padding="@dimen/_1sdp"
+                                android:visibility="gone"
+                                app:acb_animation_duration="500"
+                                app:acb_border_checked_color="@color/colorAccent"
+                                app:acb_border_checked_stroke_width="2dp"
+                                app:acb_border_not_checked_color="@color/inactive_button"
+                                app:acb_checked="false"
+                                app:acb_circle_color="@color/inactive_button"
+                                app:acb_hook_color="@color/colorAccent"
+                                app:acb_hook_stroke_width="3dp"
+                                app:acb_padding="2dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/heebo_regular_14_grey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:text="@string/method_paystack"
+                                android:textAllCaps="true"
+                                android:textColor="@color/payment_type_color"
+                                android:textSize="11sp"
+                                android:visibility="gone"
+                                tools:ignore="SmallSp" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/divider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/divider_color"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/payment_method_layout_new"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/card_payment_options"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+                            <TextView
+                                android:id="@+id/select_method_Tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@drawable/rounded_background_light_blue_selector"
+                                android:fontFamily="@font/heebo"
+                                android:gravity="center_vertical"
+                                android:hint="@string/select_card"
+                                android:paddingStart="@dimen/_12sdp"
+                                android:paddingEnd="@dimen/_16sdp"
+                                android:textColor="@color/profile_edit_text_color_bold"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".5" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:src="@drawable/ic_expand_more_24"
+                                app:layout_constraintBottom_toBottomOf="@+id/select_method_Tv"
+                                app:layout_constraintEnd_toEndOf="@+id/select_method_Tv"
+                                app:layout_constraintTop_toTopOf="@+id/select_method_Tv"
+                                tools:ignore="ContentDescription" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/inner_payment_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="33dp"
+                            app:layout_constraintTop_toBottomOf="@+id/card_payment_options">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/wallet_payment_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:elevation="5dp"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/wallet_balance_Label"
+                                    style="@style/rubik_medium_20"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/rubik_medium"
+                                    android:text="@string/wallet_balance"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="12sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/wallet_balance"
+                                    style="@style/rubik_medium_20"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="90dp"
+                                    android:fontFamily="@font/rubik_light"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintStart_toEndOf="@+id/wallet_balance_Label"
+                                    app:layout_constraintTop_toTopOf="@+id/wallet_balance_Label"
+                                    tools:text="$56,984.00" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/giftoga_payment_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/title_TV"
+                                    style="@style/rubik_medium_20"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/rubik_medium"
+                                    android:text="@string/redeem_giftOga_card_for_buying_other_giftCard"
+                                    android:textColor="@color/text_color_bold"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/giftcard_NumberTv"
+                                    style="@style/heebo_medium_13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:letterSpacing="0.1"
+                                    android:text="@string/card_number"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/title_TV" />
+
+                                <EditText
+                                    android:id="@+id/giftCardNumberEd"
+                                    style="@style/standard_text_field"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/rounded_background_blue_selector"
+                                    android:ems="10"
+                                    android:fontFamily="@font/heebo"
+                                    android:hint="@string/enter_number"
+                                    android:inputType="number"
+                                    android:paddingStart="@dimen/_12sdp"
+                                    android:paddingEnd="@dimen/_8sdp"
+                                    android:textColorHint="@color/grey_color"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:drawableGravity="end"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/giftcard_NumberTv"
+                                    app:separator="spaces" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/paypal_payment_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/paypal_title_TV"
+                                    style="@style/rubik_medium_20"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/rubik_medium"
+                                    android:text="@string/paypal_payment_title"
+                                    android:textColor="@color/text_color_bold"
+                                    android:textSize="13sp"
+                                    android:gravity="center"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/banktransfer_payment_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/banktransfer_TV"
+                                    style="@style/rubik_medium_20"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/rubik_medium"
+                                    android:text="@string/method_bank_transfer_title"
+                                    android:textColor="@color/text_color_bold"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/banktransfer_description"
+                                    style="@style/heebo_medium_13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:letterSpacing="0.1"
+                                    android:text="@string/method_bank_transfer_description"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/banktransfer_TV" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/card_payment_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toBottomOf="@id/selected_card_layout">
+
+                                <TextView
+                                    android:id="@+id/cardNumberTv"
+                                    style="@style/heebo_medium_13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:letterSpacing="0.1"
+                                    android:text="@string/card_number"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <mostafa.ma.saleh.gmail.com.editcredit.EditCredit
+                                    android:id="@+id/cardNumberEd"
+                                    style="@style/standard_text_field"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:background="@drawable/rounded_background_blue_selector"
+                                    android:ems="10"
+                                    android:fontFamily="@font/heebo"
+                                    android:inputType="number"
+                                    android:paddingStart="@dimen/_12sdp"
+                                    android:paddingEnd="@dimen/_8sdp"
+                                    android:textColorHint="@color/grey_color"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:drawableGravity="end"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/cardNumberTv"
+                                    app:separator="spaces" />
+
+                                <TextView
+                                    android:id="@+id/expire"
+                                    style="@style/heebo_medium_13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_24sdp"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:letterSpacing="0.1"
+                                    android:text="@string/expiry_date"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/cardNumberEd" />
+
+                                <br.com.sapereaude.maskedEditText.MaskedEditText
+                                    android:id="@+id/expiryDate"
+                                    style="@style/standard_text_field"
+                                    android:layout_width="@dimen/_120sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:background="@drawable/rounded_background_blue_selector"
+                                    android:fontFamily="@font/heebo"
+                                    android:hint="@string/hint_mmyy"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textColorHint="@color/grey_color"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:keep_hint="true"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/expire"
+                                    mask:allowed_chars="1234567890"
+                                    mask:mask="##/##"
+                                    tools:ignore="Autofill" />
+
+                                <TextView
+                                    android:id="@+id/cvvTv"
+                                    style="@style/heebo_medium_13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="0dp"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:letterSpacing="0.1"
+                                    android:text="@string/cvv"
+                                    android:textColor="@color/profile_text_color"
+                                    android:textSize="13sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/expire"
+                                    app:layout_constraintStart_toStartOf="@+id/cvvEd"
+                                    app:layout_constraintTop_toTopOf="@+id/expire" />
+
+                                <EditText
+                                    android:id="@+id/cvvEd"
+                                    style="@style/standard_text_field"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="0dp"
+                                    android:background="@drawable/rounded_background_blue_selector"
+                                    android:ems="10"
+                                    android:fontFamily="@font/heebo"
+                                    android:inputType="numberPassword"
+                                    android:maxLength="3"
+                                    android:textAlignment="center"
+                                    android:textColorHint="@color/grey_color"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:layout_constraintBottom_toBottomOf="@id/expiryDate"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/expiryDate"
+                                    app:layout_constraintTop_toTopOf="@+id/expiryDate"
+                                    tools:ignore="Autofill,LabelFor" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/selected_card_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_background_grey"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/card_brand"
+                                    style="@style/poppins_medium_15"
+                                    android:layout_width="0dp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/heebo_medium"
+                                    android:maxLines="1"
+                                    android:textColor="@color/history_large_color"
+                                    app:layout_constraintEnd_toStartOf="@+id/option_btn"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="Master Card" />
+
+                                <TextView
+                                    android:id="@+id/card_number"
+                                    style="@style/heebo_regular_14_grey"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_10sdp"
+                                    android:fontFamily="@font/poppins_light"
+                                    android:textColor="@color/history_time"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/option_btn"
+                                    app:layout_constraintStart_toStartOf="@+id/card_brand"
+                                    app:layout_constraintTop_toBottomOf="@id/card_brand"
+                                    tools:text="Ending In 2563 - Default" />
+
+                                <ImageView
+                                    android:id="@+id/option_btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_mastercard"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="ContentDescription" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/make_payment_btn"
+                            style="@style/button_round"
+                            android:layout_width="0dp"
+                            android:layout_marginTop="32dp"
+                            android:background="@drawable/button_blue_filled"
+                            android:text="@string/pay"
+                            android:textAllCaps="false"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/inner_payment_layout" />
+
+                        <com.paypal.checkout.paymentbutton.PayPalButton
+                            android:id="@+id/paypal_button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/inner_payment_layout" />
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="29dp"
+                            android:layout_marginTop="35dp"
+                            android:background="@drawable/card_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/make_payment_btn"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
